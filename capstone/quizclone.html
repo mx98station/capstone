@@ -89,24 +89,44 @@
 			
 
 			<script>
+			var countercorrect = 0;
+			var counterincorrect = 0;
+			var totalquestions;
 				function checker(key){
-   console.log(data[key].answer);
-    var x = document.getElementById(key).value;
-    var grade = 100;
-   console.log(" Your answer was: " + x);
+					console.log(data[key].answer);
+					totalquestions = 0;
+					for(key in data){
+						totalquestions = totalquestions + 1;
+					}
+					var x = document.getElementById(key).value;
+    
+					console.log(" Your answer was: " + x);
    
-   if (x ==  data[key].answer) {
-            window.alert("correct!");
-	   	grade = grade;
-			console.log("Current grade:" + grade);
-    } else {
-        window.alert("Wrong. Sorry.");
-        grade = grade - 10; 
-		console.log("Current grade: " + grade);
-    }
-}
+					if (x ==  data[key].answer) {
+						window.alert("correct!");
+						countercorrect = countercorrect + 1;
+						console.log("Current correct amount:" + countercorrect);
+						console.log("Current incorrect amount:" + counterincorrect);
+			
+					} else {
+						window.alert("Wrong. Sorry.");
+						counterincorrect = counterincorrect + 1;
+						console.log("Current correct amount:" + countercorrect);
+						console.log("Current incorrect amount:" + counterincorrect);
+					}
+				}
 		
 			</script>
+			
+			<script>
+			
+			function grader(){
+				var countertotal = countercorrect + counterincorrect;
+				window.alert("You got " + countercorrect + " out of " + totalquestions);
+			}
+			
+			</script>
+			
 			
 			
 
@@ -186,7 +206,7 @@
 		<a href="quizclone.html">Take quiz</a>
 	</div>
 
-<button onclick="grader(checker())">Check Answer</button>
+<button onclick="grader()">Check Answer</button>
 	
 	
 
