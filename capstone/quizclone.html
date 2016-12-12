@@ -93,19 +93,21 @@
    console.log(data[key].answer);
     var x = document.getElementById(key).value;
     var grade = 100;
-   console.log(" Youre answer was: " + x);
+   console.log(" Your answer was: " + x);
+   
    if (x ==  data[key].answer) {
             window.alert("correct!");
+			console.log("Current grade:" + grade);
     } else {
         window.alert("Wrong. Sorry.");
-        grade - 10; 
+        grade = grade - 10; 
+		console.log("Current grade: " + grade);
     }
-    window.alert("youre grade is now : " + grade);
 }
+		
 			</script>
 			
 			
-
 
 
 
@@ -183,9 +185,9 @@
 		<a href="quizclone.html">Take quiz</a>
 	</div>
 
-
+<button onclick="grader(checker())">Check Answer</button>
 	
-	<button onclick="checker();">Check Answer</button>
+	
 
 
 
