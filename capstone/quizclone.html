@@ -97,10 +97,11 @@
    
    if (x ==  data[key].answer) {
             window.alert("correct!");
+	   	grade = grade;
 			console.log("Current grade:" + grade);
     } else {
         window.alert("Wrong. Sorry.");
-        grade - 10; 
+        grade = grade - 10; 
 		console.log("Current grade: " + grade);
     }
 }
