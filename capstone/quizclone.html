@@ -77,7 +77,7 @@
 					<div>B) {{data.B}}</div>
 					<div>C) {{data.C}}</div>
 					<div>D) {{data.D}}</div>
-					<input type="text" id="{{questionkey}}" placeholder="Type A, B, C or D" style="text-transform: uppercase;" maxlength="1">
+					<input type="text" id="{{questionkey}}" placeholder="Type A, B, C or D" style="text-transform: lowercase;" maxlength="1">
 					<button onclick="checker('{{questionkey}}')">Check Answer</button>
 
 				</div>
@@ -94,15 +94,14 @@
 			var totalquestions;
 				function checker(key){
 					console.log(data[key].answer);
-					totalquestions = 0;
-					for(key in data){
-						totalquestions = totalquestions + 1;
-					}
 					var x = document.getElementById(key).value;
-    
 					console.log(" Your answer was: " + x);
-   
-					if (x ==  data[key].answer) {
+					
+					
+					
+					
+					
+					if (x == data[key].answer) {
 						window.alert("correct!");
 						countercorrect = countercorrect + 1;
 						console.log("Current correct amount:" + countercorrect);
@@ -113,6 +112,10 @@
 						counterincorrect = counterincorrect + 1;
 						console.log("Current correct amount:" + countercorrect);
 						console.log("Current incorrect amount:" + counterincorrect);
+					}
+					totalquestions = 0;
+					for(key in data){
+						totalquestions = totalquestions + 1;
 					}
 				}
 		
